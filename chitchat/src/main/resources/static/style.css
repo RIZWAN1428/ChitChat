@@ -1,0 +1,260 @@
+.header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #006400;
+    padding: 15px 30px; /* Add padding for spacing inside the box */
+    margin-top: 30px; /* Adjust as needed */
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f0f8ff; /* Light blue background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Fancy shadow */
+    display: inline-block; /* Keeps the box size around text */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    background: url('https://www.toptal.com/designers/subtlepatterns/uploads/doodles.png'),
+            linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevents unwanted scrolling */
+}
+
+.container {
+    display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       height: 100vh;
+}
+
+.split-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-grow: 1; /* Ensure it fills the screen */
+}
+
+.chat-box, .middle-box {
+    max-height: 90vh; /* Ensure it fits the screen */
+}
+
+.middle-box {
+    flex: 1;
+    width: 350px;
+    height: 90vh;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+#messageDisplay {
+    max-height: 80vh; /* Ensure messages don’t overflow */
+    overflow-y: auto;
+}
+
+/* Responsive Scaling */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    .chat-box, .middle-box {
+        width: 90%;
+        max-height: 80vh;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+}
+
+.split-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.chat-box {
+    width: 250px;
+    height: 450px;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+.chat-box:hover {
+    background-color: #f0f0f0; /* Light gray on hover */
+    transform: scale(1.02); /* Slight zoom effect */
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.chat-box img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.middle-box {
+    display: flex;
+    flex-direction: column;
+    width: 300px; /* Adjust width as needed */
+    margin: auto;
+    padding: 10px;
+    background-color: #d3d3d3;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+     width: 100%;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0;
+  display: flex;
+}
+
+/* Champs messages on left */
+.champs-message {
+    align-self: flex-start;
+    background-color: #d1e7ff;
+    border-left: 4px solid #007bff;
+    text-align: left;
+}
+
+/* Rizz messages on right */
+.rizz-message {
+    align-self: flex-end;
+    background-color: #d4edda;
+    border-right: 4px solid #28a745;
+    text-align: left;
+    margin-left: auto; /* Push to right */
+}
+#messageDisplay {
+    list-style-type: none;
+    padding: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.left {
+    align-self: flex-start;
+    background-color: #d1e7ff;
+    border-left: 4px solid #007bff;
+    text-align: left;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.right {
+    align-self: flex-end;
+    background-color: #d4edda;
+    border-right: 4px solid #28a745;
+    text-align: right;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.sender-name {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: #333;
+}
+
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+input {
+    width: 70%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+button {
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.middle-header {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #d3d3d3;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 2px solid #007bff;
+    color: #006400;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.champs-header{
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 2px solid #007bff;
+    color: #006400;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.rizz-header{
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        padding: 10px;
+        background-color: #ffffff;
+        border-radius: 10px 10px 0 0;
+        border-bottom: 2px solid #007bff;
+        color: #006400;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+}

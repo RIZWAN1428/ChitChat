@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChitChat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">ChitChat - Land Little</div>
+    <div class="split-container">
+        <!-- Champs Box -->
+        <div class="chat-box champs-box">
+                <h2 class="champs-header">Champs</h2>
+            <img src="champs.png" alt="Champs" class="chat-image">
+            <div class="input-container">
+                <input type="text" id="champsInput" placeholder="Type here..." autofocus>
+                <button onclick="sendMessage('champs')">Send</button>
+            </div>
+        </div>
+
+        <!-- Middle Message Display Box -->
+        <div class="chat-box middle-box">
+            <h2 class="middle-header">Ladaai Room</h2>
+            <ul id="messageDisplay"></ul>
+        </div>
+
+        <!-- Rizz Box -->
+        <div class="chat-box rizz-box">
+            <h2 class="rizz-header">Rizz</h2>
+            <img src="Rizz.jpg" alt="Rizz" class="chat-image">
+            <div class="input-container">
+                <input type="text" id="rizzInput" placeholder="Type here..." autofocus>
+                <button onclick="sendMessage('rizz')">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function sendMessage(user) {
+    let inputBox = document.getElementById(user + "Input");
+    let message = inputBox.value.trim();
+    if (!message) return;
+
+    let messageDisplay = document.getElementById("messageDisplay");
+
+    // Create message container
+    let messageItem = document.createElement("li");
+    messageItem.classList.add(user === "champs" ? "left" : "right");
+
+    // Add sender name
+    let senderName = document.createElement("div");
+    senderName.classList.add("sender-name");
+    senderName.textContent = user === "champs" ? "Champs" : "Rizz";
+
+    // Add message text
+    let messageText = document.createElement("div");
+    messageText.classList.add("message-text");
+    messageText.textContent = message;
+
+    // Append name and message
+    messageItem.appendChild(senderName);
+    messageItem.appendChild(messageText);
+    messageDisplay.appendChild(messageItem);
+
+    inputBox.value = "";
+    messageDisplay.scrollTop = messageDisplay.scrollHeight; // Auto-scroll to latest message
+}
+
+</script>
